@@ -1,0 +1,87 @@
+.login-container {
+    display: flex;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+    color: white;
+}
+
+.input-form{
+    padding: 50px;
+    width: 300px;
+    height: 400px;
+    box-shadow: 0 0 100px 5px rgba(46, 45, 45, 0.689), 0 0 10px 1px grey inset;
+    background-color: rgb(28, 27, 27);
+}
+.user-registration-div button{
+    font-size: 22px;
+    all: unset;
+    padding: 5px;
+    margin-right: 15px;
+    cursor: pointer;
+}
+.active {
+    border-bottom: 1.5px solid  rgb(0, 119, 255) !important;
+}
+.input-div {
+    margin-top: 20px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    gap: 15px;
+}
+.input-div div  input {
+    border: 0;
+    width: 92%;
+    padding: 10px;
+    border-radius: 25px;
+    background-color: var(--secondary-dull);
+    transition: box-shadow .3s ease-in-out;
+    cursor: pointer
+}
+.input-div input:hover, .input-div input:focus {
+    box-shadow: inset 0 0 30px 1px rgb(255, 255, 255);
+}
+.input-div div {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+.input-div div label{
+    align-self: start;
+    color: var(--secondary-dull);
+    padding-left: 20px;
+    padding-bottom: 10px;
+    font-size: 14px;
+}
+.submit-btn{
+    background-color: rgb(0, 119, 255);
+    border: 0;
+    margin-top: 40px;
+    color: white;
+    width: 100%;
+    padding: 10px;
+    border-radius: 25px;
+    box-shadow: inset 0 0 10px 1px rgba(255, 255, 255, 0.461);
+    transition: box-shadow .2s ease-in-out;
+    cursor: pointer
+}
+.submit-btn[disabled]{
+    color: rgba(255, 255, 255, 0.247);
+    background-color: rgba(0, 119, 255, 0.08);
+    box-shadow: inset 0 0 30px 1px rgba(255, 255, 255, 0.267);
+    cursor: default;
+    pointer-events: none;
+    
+}
+.submit-btn:hover{
+    background-color: rgba(0, 119, 255, 0.747);
+    box-shadow: inset 0 0 30px 1px rgb(255, 255, 255);
+}
+
+@media screen and (max-height: 200px) {
+    .input-form {
+        background-color: red;
+    }
+}

@@ -1,0 +1,19 @@
+.create-post-container{
+    padding: 50px;
+    width: 500px;
+    height: auto;
+    box-shadow: 0 0 100px 5px rgba(46, 45, 45, 0.689), 0 0 10px 1px grey inset;
+    background-color: rgb(28, 27, 27);
+}
+
+h2 {
+    margin: 0;
+}
+.create-post-descrip{
+    width: 92%;
+    height: 100px;
+    box-shadow: 0 0 100px 5px rgba(46, 45, 45, 0.689), 0 0 10px 1px grey inset;
+    background-color: var(--secondary-dull);
+    resize:vertical;
+    border-radius: 15px;
+}

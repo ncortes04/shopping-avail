@@ -1,0 +1,38 @@
+.header-container {
+    height: 100px;
+    background-color: black;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    color: whitesmoke;
+    display: flex;
+    justify-content: space-between;
+}
+.header-container h1 {
+    margin: 0;
+}
+.header-container button {
+    all: unset;
+    width: 30px;
+    height: 30px;
+    display: flex;
+    gap: 2px;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    cursor: pointer;
+}
+.header-container button div {
+    width: 25px;
+    height: 5px;
+    background-color: whitesmoke;
+    border-radius: 25px;
+}
+.header-right-div{
+    padding-right: 40px;
+    display: flex;
+    gap: 15px;
+}
+.header-right-div a{
+    cursor: pointer;
+}

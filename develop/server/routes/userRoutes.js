@@ -1,25 +1,18 @@
 const express = require('express')
-const userModel = require('../models/users')
 const router = express.Router()
+const {
+  register,
+  login,
+  getSingleUser,
+  getRole
+} = require('../controllers/user-controllers')
+const { authMiddleware } = require('../utils/AUTH')
 
-router.get("/", async (req, res) => {
-    const user = await userModel.find({})
+router.route('/register').post(register)
+router.route('/me').get(authMiddleware, getSingleUser)
+router.route('/getrole').get(authMiddleware, getRole)
 
-    try {
-        res.send(user)
-    } catch (err) {
-        res.status(500).send(err)
-    }
-})
-router.post("/", async (req, res) => {
-    const user = new userModel(req.body)
-    console.log(req)
-    try {
-        await user.save()
-        res.send()
-    } catch (error) {
-      response.status(500).send(error);
-    }
-  });
+router.route('/login').post(login)
+
 
 module.exports = router
