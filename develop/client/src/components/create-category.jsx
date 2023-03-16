@@ -4,7 +4,6 @@ import { useState } from 'react';
 import { addPost } from '../utils/API';
 function CreateCategory(role){
     const [category, setCategory] = useState('');
-    console.log(category)
          const handleSubmit = async (event) => {
                 event.preventDefault()
         

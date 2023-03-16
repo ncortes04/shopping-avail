@@ -1,9 +1,14 @@
 import '../styles/create-post.css'
-import authService from '../utils/auth'
 import { useState } from 'react';
 import { createPost } from '../utils/API';
-function CreatePost(role){
+function CreatePost({role, categories}){
     const [addPostForm, setAddPostForm] = useState({ name: '', price: '', description: '', brand: '', category: '' });
+    const [selectedCategory, setselectedCategory] = useState(null)
+    const [open, setOpen] = useState(false);
+            const handleOpen = (event) => {
+                event.preventDefault()
+                setOpen(!open);
+            };
             const handleInputChange = (event) => {
                 const { name, value } = event.target;
                 setAddPostForm({ ...addPostForm, [name]: value });
@@ -30,6 +35,7 @@ function CreatePost(role){
                 brand: '',
                 category: ''
               });
+            setselectedCategory(null)
           };
         
     return(
@@ -37,7 +43,7 @@ function CreatePost(role){
         <form className='create-post-container'>
             <div className='input-div'>
                 <h2>Create A Post</h2>
-                <div>
+                <div className='input-parent-div'>
                     <label>BRAND</label>
                     <input  
                     type="text"
@@ -46,7 +52,7 @@ function CreatePost(role){
                     value={addPostForm.brand}
                     />
                 </div>
-                <div>
+                <div className='input-parent-div'>
                     <label>NAME</label>
                     <input  
                     type="text"
@@ -55,16 +61,33 @@ function CreatePost(role){
                     value={addPostForm.name}
                     />
                 </div>
-                <div>
+                <div className='input-parent-div'>
                     <label>CATEGORY</label>
-                    <input  
-                    type="text"
-                    name="category"
-                    onChange={handleInputChange}
-                    value={addPostForm.category}
-                    />
+                         <div className="dropdown-button" onClick={(e) => {handleOpen(e)}}>
+                            <div className='dropdown-name'>
+                                 <p>{ selectedCategory ? selectedCategory : "Select Category"}</p>
+                                <span className={ open ? 'arrow down': "arrow"}></span>
+                            </div>
+                            {open 
+                                ?
+                                    <ul className='dropdown-items-ul'>
+                                        {categories.length && categories.map((item) => {
+                                            return (
+                                                <li 
+                                                    className='category-li-btn'
+                                                    key={item.name}
+                                                    onClick={() => {addPostForm.category = item._id; setselectedCategory(item.name) }}
+                                                > 
+                                                    {item.name}
+                                                 </li>
+                                             )
+                                        })}
+                                         <button className='clear-button' onClick={() => {setselectedCategory(null)}}> Clear</button>
+                                     </ul>
+                                : null}
+                        </div>   
                 </div>
-                <div>
+                <div className='input-parent-div'>
                     <label>PRICE</label>
                     <input 
                     type="text" 
@@ -73,7 +96,7 @@ function CreatePost(role){
                     value={addPostForm.price}
                     />
                 </div>
-                <div>
+                <div className='input-parent-div'>
                     <label>DESCRIPTION</label>
                     <textarea 
                     className='create-post-descrip'
@@ -84,7 +107,6 @@ function CreatePost(role){
                 </div>
                 <button onClick={handleSubmit} className='submit-btn'>Create</button>
             </div>
-           
         </form>
     </div>
     )

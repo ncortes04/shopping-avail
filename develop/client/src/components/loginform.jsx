@@ -55,7 +55,7 @@ function Login(){
                         onClick={(e) => {setToggleRegister(e.target.value);e.preventDefault()}}>SIGN UP</button>
                 </div>
                 <div className='input-div'>
-                    <div>
+                    <div className='input-parent-div'>
                         <label>EMAIL</label>
                         <input  
                         type="text" 
@@ -63,7 +63,7 @@ function Login(){
                         onChange={handleInputChange}
                         value={userFormData.email}/>
                     </div>
-                    <div>
+                    <div className='input-parent-div'>
                         <label>USERNAME</label>
                         <input 
                         type="text" 
@@ -71,7 +71,7 @@ function Login(){
                         onChange={handleInputChange}
                         value={userFormData.username}               />
                     </div>
-                    <div>
+                    <div className='input-parent-div'>
                         <label>PASSWORD</label>
                         <input 
                           type='password'
