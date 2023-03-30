@@ -10,6 +10,7 @@
     padding: .5rem;
     box-shadow: 0 0 1rem rgba(0, 0, 0, .5);
     border-bottom-left-radius: .5rem;
+    z-index: 1;
 }
 .cart-button {
   position: fixed;
@@ -21,6 +22,7 @@
   margin: 5px;
   width: 50px;
   height: 50px;
+  z-index: 1;
 }
 .cart-close-btn {
     all:unset;
@@ -74,11 +76,10 @@
 .fixed{
     top: 0 !important
 }
-
-.cart-item-container {
-    display: flex;
-    justify-content: space-between;
+.cart-closed-icon {
+    z-index: 1;
 }
+
 .cart-item-container img {
     width: 130px;
     height: 80px;

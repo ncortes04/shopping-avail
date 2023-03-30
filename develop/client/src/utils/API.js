@@ -16,7 +16,7 @@ export const register = async (formData) => {
     };
 export const getSingle = async () => {
          return fetch(`/api/me`, {
-          method: 'GET',
+          method: 'POST',
           headers: { 'Content-Type': 'application/json',
           authorization: `Bearer ${authService.getToken()}`,
         },
@@ -61,4 +61,11 @@ export const getCategories = async () => {
     headers: { 'Content-Type': 'application/json',
   },
 })
+}
+export const getIndividual = async (id) => {
+  return await fetch(`/api/single${id}`, {
+    method: 'GET',
+    headers: { 'Content-Type': 'application/json',
+  },
+});
 }

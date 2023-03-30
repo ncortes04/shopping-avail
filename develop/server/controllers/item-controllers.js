@@ -13,7 +13,6 @@ module.exports = {
           
             await newItem.save();
           
-            await newItem.populate({ path: 'category', select: 'name' }).execPopulate();
             res.status(200).json({message: "success"})
         } catch(err) {
             console.log(err.message)
@@ -30,6 +29,18 @@ module.exports = {
         } catch(err){
             console.error(err)
         }
-    }
+    },
+    async getindividualItem(req, res) {
+        try {
+          const item  = await Item.findById({ _id: req.params.id}).populate({
+            path:'category',
+            select:'name'
+        })
+            !item && res.json(({message : 'item not found'}))
+          res.status(200).json(item)
+        } catch (err) {
+          res.status(500).json(err);
+        }
+      },
 }
 

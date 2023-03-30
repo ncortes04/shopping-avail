@@ -5,7 +5,6 @@ import { addPost } from '../utils/API';
 function CreateCategory(role){
     const [category, setCategory] = useState('');
          const handleSubmit = async (event) => {
-                event.preventDefault()
         
             try {
               
@@ -40,6 +39,7 @@ function CreateCategory(role){
            
         </form>
     </div>
+      
     )
 }
 

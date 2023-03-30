@@ -1,9 +1,16 @@
+.login-container {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
 .create-post-container{
     padding: 50px;
     width: 500px;
-    height: auto;
-    box-shadow: 0 0 100px 5px rgba(46, 45, 45, 0.689), 0 0 10px 1px grey inset;
-    background-color: rgb(28, 27, 27);
+    box-shadow: 0 0 10px 1px rgba(126, 125, 125, 0.438);
+    background-color: #f3f3f3;
+    border-radius: 10px;
 }
 
 h2 {
@@ -12,8 +19,7 @@ h2 {
 .create-post-descrip{
     width: 92%;
     height: 100px;
-    box-shadow: 0 0 100px 5px rgba(46, 45, 45, 0.689), 0 0 10px 1px grey inset;
-    background-color: var(--secondary-dull);
+     background-color: var(--secondary-dull);
     resize:vertical;
     border-radius: 15px;
 }

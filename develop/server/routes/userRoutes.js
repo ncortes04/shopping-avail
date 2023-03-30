@@ -9,7 +9,7 @@ const {
 const { authMiddleware } = require('../utils/AUTH')
 
 router.route('/register').post(register)
-router.route('/me').get(authMiddleware, getSingleUser)
+router.route('/me').post(authMiddleware, getSingleUser)
 router.route('/getrole').get(authMiddleware, getRole)
 
 router.route('/login').post(login)

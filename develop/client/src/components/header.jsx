@@ -9,14 +9,11 @@ function Header({toggleNav, setToggleNav, role}){
         <div className="header-container">
                 <div>
                     <h1>Cortes Apparel Market</h1>
-                    <button onClick={() => {handletoggle()}}>
-                        <div></div>
-                        <div></div>
-                        <div></div>
-                    </button>
+                   
                 </div>
                 <div className='header-right-div'>
                     <a href='/'>HOME</a>
+                    <a href='/aboutus'>ABOUT US</a>
                     {authService.loggedIn()
                         ? (
                             <>
@@ -31,8 +28,7 @@ function Header({toggleNav, setToggleNav, role}){
                               <a onClick={() => {authService.logout();}}>LOGOUT</a>
                             </>
                         ) : (
-                            <a onClick={() => {window.location.assign('/login');
-                        }}>LOGIN</a>
+                            <a href='/login'>LOGIN</a>
                         )
                         
                        
