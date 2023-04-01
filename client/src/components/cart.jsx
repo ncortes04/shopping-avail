@@ -63,7 +63,7 @@ function Cart({localCart, setLocalCart}) {
                     {cartItems}
                     <div className="cart-auth-handle">
                         {authService.loggedIn() && localCart.length
-                        ? <button className="checkout-btn">Checkout</button>
+                        ? <a href="/cart" className="checkout-btn">Checkout</a>
                         : !localCart.length ? <p>Cart is Empty</p>
                         : <p>Must Be Logged In to Checkout</p>
                         }
